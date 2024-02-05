@@ -39,6 +39,30 @@ public class SinglyLinkedLists {
 
 		size++;
 	}
+	//Insert element at a particular index;
+	public void insertAtIndex(int value, int index){
+		Node node = new Node(value);
+		
+		if(index == 0){
+			insertElement(value);
+			return;
+		}		
+
+		if(index == size){
+			insertAtLastIndex(value);
+			return;
+		}
+
+		Node temp = head;
+		for(int i = 1; i < index; i++){
+			temp = temp.next;
+		}
+		Node current = temp.next;
+		temp.next = node;
+		node.next = current;
+		size++;
+		
+	}
 	
 	 class Node{
 		private int value;
@@ -77,6 +101,10 @@ public class SinglyLinkedLists {
 		//Insert at Last Index
 		newClass.insertAtLastIndex(8);
 
+		newClass.displayElements();
+
+		//Insert at Index
+		newClass.insertAtIndex(5, 4);
 		newClass.displayElements();
 	}
 }
