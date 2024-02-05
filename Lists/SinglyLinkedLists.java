@@ -18,6 +18,27 @@ public class SinglyLinkedLists {
 		}
 		size += size;
 	}
+
+	//Inserting the last element in the list
+	public void insertAtLastIndex(int value){
+		Node lastValue = new Node(value);
+
+		if(tail == null){
+			lastValue = tail;
+		}
+		/**
+		Instead, you can also call insertElement(); like:
+		if(tail == null){
+			insertElement(value){
+			return;
+		}
+		}
+		*/
+		tail.next = lastValue;
+		lastValue = tail;
+
+		size++;
+	}
 	
 	 class Node{
 		private int value;
@@ -50,6 +71,11 @@ public class SinglyLinkedLists {
 		newClass.insertElement(9);
 		newClass.insertElement(4);
 		newClass.insertElement(1);
+
+ 		newClass.displayElements();
+
+		//Insert at Last Index
+		newClass.insertAtLastIndex(8);
 
 		newClass.displayElements();
 	}
