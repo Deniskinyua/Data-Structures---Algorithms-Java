@@ -63,6 +63,17 @@ public class SinglyLinkedLists {
 		size++;
 		
 	}
+
+	//Deleting an item an an index
+	public void deleteItem(int index){
+		Node temp = head;
+		for(int i = 1; i < index; i++){
+			temp = temp.next;
+		}
+		Node current = temp.next;
+		temp.next = current.next;
+		current.next = null;
+	}
 	
 	 class Node{
 		private int value;
@@ -105,6 +116,10 @@ public class SinglyLinkedLists {
 
 		//Insert at Index
 		newClass.insertAtIndex(5, 4);
+		newClass.displayElements();
+
+		//Delete item at index
+		newClass.deleteItem(3);
 		newClass.displayElements();
 	}
 }
